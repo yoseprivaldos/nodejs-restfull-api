@@ -1,0 +1,141 @@
+///USER TEST
+###REGISTER
+POST http://localhost:3000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username" : "yoseprivaldos",
+    "password" : "rahasia", 
+    "name" : "Yosep R Silaban"
+}
+
+### LOGIN
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username" : "yoseprivaldos",
+    "password" : "rahasia"
+}
+
+# token: c7b7c22b-8a32-4e3f-b78f-9399aa3751b4
+
+### GET CURRENT USER
+GET  http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: fa4ef45f-e833-41a6-b6cb-eb8da284a0c4
+
+###UPDATE
+PATCH  http://localhost:3000/api/users/current
+Content-Type: application/json
+Accept: application/json
+Authorization: 753df32a-ea3e-4571-8d9c-50dac641f63d
+
+{
+    "name" : "Yosep Rivaldo Silaban",
+    "password": "rahasia"
+}
+### LOGOUT
+DELETE http://localhost:3000/api/users/logout
+Content-Type: application/json
+Accept: application/json
+Authorization: 753df32a-ea3e-4571-8d9c-50dac641f63d
+
+///CONTACTS API
+### CREATE
+POST http://localhost:3000/api/contacts
+Content-Type: application/json
+Accept: application/json
+Authorization: 753df32a-ea3e-4571-8d9c-50dac641f63d
+
+{
+    "first_name": "firstName 15",
+    "last_name": "lastName 15",
+    "email": "email15@gmail.com",
+    "phone": "081209090909:15"
+}
+
+### GET
+GET http://localhost:3000/api/contacts/859
+Content-Type: application/json
+Accept: application/json
+Authorization: 753df32a-ea3e-4571-8d9c-50dac641f63d
+
+### PUT
+PUT http://localhost:3000/api/contacts/859
+Content-Type: application/json
+Accept: application/json
+Authorization: 753df32a-ea3e-4571-8d9c-50dac641f63d
+
+{
+    "first_name": "firstName 1",
+    "last_name": "lastName 1",
+    "email": "email1@gmail.com",
+    "phone": "081209090909:1"
+}
+
+### DELETE
+DELETE http://localhost:3000/api/contacts/860
+Content-Type: application/json
+Accept: application/json
+Authorization: 753df32a-ea3e-4571-8d9c-50dac641f63d
+
+
+### SEARCH
+GET http://localhost:3000/api/contacts
+Content-Type: application/json
+Accept: application/json
+Authorization: 753df32a-ea3e-4571-8d9c-50dac641f63d
+
+
+/// ADDRESS API
+### POST
+POST http://localhost:3000/api/contacts/859/addresses
+Content-Type: application/json
+Accept: application/json
+Authorization: 753df32a-ea3e-4571-8d9c-50dac641f63d
+
+{
+  "street": "street",
+  "city": "city",
+  "province": "province",
+  "country": "country",
+  "postal_code": "12345"
+}
+
+### GET
+GET http://localhost:3000/api/contacts/859/addresses/363
+Content-Type: application/json
+Accept: application/json
+Authorization: 753df32a-ea3e-4571-8d9c-50dac641f63d
+
+
+### PUT
+PUT http://localhost:3000/api/contacts/859/addresses/363
+Content-Type: application/json
+Accept: application/json
+Authorization: 753df32a-ea3e-4571-8d9c-50dac641f63d
+
+{
+  "street": "street 1",
+  "city": "city 1",
+  "province": "province 1",
+  "country": "country",
+  "postal_code": "pos:1"
+}
+
+### DELETE
+DELETE http://localhost:3000/api/contacts/859/addresses/364
+Content-Type: application/json
+Accept: application/json
+Authorization: 753df32a-ea3e-4571-8d9c-50dac641f63d
+
+
+### LIST
+GET http://localhost:3000/api/contacts/859/addresses
+Content-Type: application/json
+Accept: application/json
+Authorization: 753df32a-ea3e-4571-8d9c-50dac641f63d
